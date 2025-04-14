@@ -21,7 +21,7 @@ export function ContactFab({ property }: { property: any }) {
             </button>
           </div>
 
-          <a href="tel:+97142345678" className="w-full">
+          <a href="tel:+971564418632" className="w-full">
             <Button className="p-4 cursor-pointer hover:scale-101 w-full">
               <Phone className="w-4 h-4" />
               Call Agent
@@ -29,7 +29,7 @@ export function ContactFab({ property }: { property: any }) {
           </a>
 
           <a
-            href="https://api.whatsapp.com/send?phone=0971914555805"
+            href="https://api.whatsapp.com/send?phone=0971564418632"
             className="w-full"
           >
             <Button className="p-4 cursor-pointer hover:scale-101 w-full">
@@ -38,7 +38,7 @@ export function ContactFab({ property }: { property: any }) {
           </a>
 
           <a
-            href="mailto:info@trm.ae"
+            href="mailto:info@trm-realestatecom.org"
             className="text-sm text-muted-foreground hover:text-foreground"
           >
             <Button variant="outline" className="w-full gap-2">

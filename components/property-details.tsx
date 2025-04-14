@@ -143,7 +143,7 @@ export function PropertyDetails({ property }: { property: any }) {
             {/* Contact Options */}
             <div className="bg-background rounded-lg p-6 shadow-sm mt-6 space-y-3">
               <h3 className="font-medium text-foreground">Contact Options</h3>
-              <a href="tel:+97142345678" className="block w-full">
+              <a href="tel:+971564418632" className="block w-full">
                 <Button variant="outline" className="p-4 cursor-pointer  w-full">
                   <Phone className="w-4 h-4" />
                   Call Agent
@@ -151,7 +151,7 @@ export function PropertyDetails({ property }: { property: any }) {
               </a>
 
               <a
-                href="https://api.whatsapp.com/send?phone=0971914555805"
+                href="https://api.whatsapp.com/send?phone=0971564418632"
                 className="block w-full "
               >
                 <Button variant="outline" className="p-4 cursor-pointer  w-full">
@@ -160,7 +160,7 @@ export function PropertyDetails({ property }: { property: any }) {
               </a>
 
               <a
-                href="mailto:info@trm.ae"
+                href="mailto:info@trm-realestatecom.org"
                 className="block cursor-pointer"
               >
                 <Button variant="outline" className="w-full gap-2 cursor-pointer">

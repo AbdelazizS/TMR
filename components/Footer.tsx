@@ -71,7 +71,7 @@ const Footer = () => {
                 <div className="flex items-center space-x-1">
                   <MapPin className="flex-shrink-0 size-5" />
                   <span className="text-sm text-foreground/80">
-                    Bussines Village , Tower -B- office 217 - Deira m Duabi UAE
+                    Bussines Village , Tower -B- office 217 - Deira Duabi UAE
                   </span>
                 </div>
                 <div className="flex items-center space-x-1">
@@ -89,7 +89,7 @@ const Footer = () => {
                     href="mailto:info@trm-realestatecom.org"
                     className="text-sm text-muted-foreground hover:text-foreground"
                   >
-                    info@trm.ae
+                    info@trm-realestatecom.org
                   </a>
                 </div>
               </div>

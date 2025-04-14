@@ -72,7 +72,7 @@ const Navbar5 = () => {
           >
             Learn More
           </Button> */}
-          <a href="https://api.whatsapp.com/send?phone=0249129891773">
+          <a href="https://api.whatsapp.com/send?phone=0971564418632">
             <Button className="p-4 cursor-pointer hover:scale-101 ">
               Contact Us <PhoneCallIcon />
             </Button>
@@ -119,7 +119,7 @@ const Navbar5 = () => {
 
             <div className="flex items-center gap-4">
 
-              <a href="https://api.whatsapp.com/send?phone=0249129891773" className="w-full">
+              <a href="https://api.whatsapp.com/send?phone=0971564418632" className="w-full">
                 <Button className="p-4 cursor-pointer hover:scale-101 w-full">
                   Contact Us <PhoneCallIcon />
                 </Button>
