@@ -7,45 +7,44 @@ import Image from "next/image";
 import { Fragment } from "react";
 
 export const metadata: Metadata = {
-  title: 'Contact Us | TRM Real Estate Dubai',
+  title: "Contact Us | TRM Real Estate Dubai",
   description:
-    'Get in touch with TRM Real Estate for expert guidance on buying, selling, or renting properties in Dubai. We’re here to help you find your dream home or investment.',
+    "Get in touch with TRM Real Estate for expert guidance on buying, selling, or renting properties in Dubai. We’re here to help you find your dream home or investment.",
   keywords: [
-    'TRM Real Estate',
-    'Dubai real estate',
-    'contact TRM',
-    'real estate agent Dubai',
-    'property consultation',
-    'buy property Dubai',
-    'sell property Dubai',
-    'real estate inquiry'
+    "TRM Real Estate",
+    "Dubai real estate",
+    "contact TRM",
+    "real estate agent Dubai",
+    "property consultation",
+    "buy property Dubai",
+    "sell property Dubai",
+    "real estate inquiry",
   ],
   openGraph: {
-    title: 'Contact TRM Real Estate Dubai',
+    title: "Contact TRM Real Estate Dubai",
     description:
-      'Need help with real estate in Dubai? Contact TRM Real Estate for personalized assistance with buying, selling, or renting properties.',
-    url: 'https://yourdomain.com/contact_us',
-    siteName: 'TRM Real Estate',
+      "Need help with real estate in Dubai? Contact TRM Real Estate for personalized assistance with buying, selling, or renting properties.",
+    url: "https://yourdomain.com/contact_us",
+    siteName: "TRM Real Estate",
     images: [
       {
-        url: '/images/trm-logo.png',
+        url: "/images/trm-logo.png",
         width: 1200,
         height: 630,
-        alt: 'TRM Real Estate Logo'
-      }
+        alt: "TRM Real Estate Logo",
+      },
     ],
-    locale: 'en_US',
-    type: 'website'
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Contact TRM Real Estate Dubai',
+    card: "summary_large_image",
+    title: "Contact TRM Real Estate Dubai",
     description:
-      'Reach out to TRM Real Estate for any inquiries related to properties in Dubai. Our team is ready to assist you.',
-    images: ['/images/trm-logo.png']
-  }
+      "Reach out to TRM Real Estate for any inquiries related to properties in Dubai. Our team is ready to assist you.",
+    images: ["/images/trm-logo.png"],
+  },
 };
-
 
 export default function ContactPage() {
   return (
@@ -116,14 +115,19 @@ export default function ContactPage() {
             </div>
             <div className="space-y-2">
               <a
-                href="tel:+97142345678"
+                href="tel:+9711564418632"
                 className="block text-xl font-semibold text-primary"
                 aria-label="Call our main office number"
               >
-                +971 4 234 5678
+                +971 156 441 8632
               </a>
               <p className="text-sm text-muted-foreground">
-                Emergency: +971 50 123 4567
+                <a
+                  href="tel:+9715596600372"
+                  aria-label="Call our main office number"
+                >
+                  Emergency: +971 559 660 0372
+                </a>
               </p>
             </div>
           </article>
@@ -140,12 +144,12 @@ export default function ContactPage() {
             </div>
             <div className="space-y-3">
               <address className="not-italic text-muted-foreground">
-                <p className="font-medium">Main Office</p>
-                <p>Burj Khalifa Tower, Level 123</p>
-                <p>Downtown Dubai, UAE</p>
+                <p className="font-medium text-foreground">Main Office</p>
+                <p>Bussines Village, Tower -B-</p>
+                <p>office 217 - Deira Duabi UAEE</p>
               </address>
               <div className="pt-4">
-                <p className="text-sm font-medium text-gray-900">
+                <p className="text-sm font-medium text-foreground">
                   Open Daily: 8 AM - 10 PM GST
                 </p>
               </div>
@@ -164,10 +168,10 @@ export default function ContactPage() {
             </div>
             <div className="space-y-4">
               <a
-                href="mailto:contact@paramountrealty.ae"
+                href="mailto:info@trm-realestatecom.org"
                 className="block font-medium text-primary"
               >
-                contact@paramointrealty.ae
+                info@trm-realestatecom.org
               </a>
               <div className="flex gap-4 pt-2">
                 <a
@@ -183,14 +187,17 @@ export default function ContactPage() {
         </div>
 
         <section className="mt-6 md:mt-10 grid gap-12">
-        <div className="h-[520px] border-4 overflow-hidden rounded-2xl shadow-lg">
+          <div className="h-[522px] border-2 overflow-hidden rounded-2xl shadow">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.325500833864!2d55.27602921500898!3d25.197155983897135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f433f068c6e3d%3A0x229dba5e4a1c2f64!2sBurj%20Khalifa!5e0!3m2!1sen!2sae!4v1625555555555!5m2!1sen!2sae"
+              src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d28865.380014951268!2d55.343189921314305!3d25.26478193760498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sBussines%20Village%20%2C%20Tower%20-B-%20office%20217%20-%20Deira%20Duabi%20UAE!5e0!3m2!1sar!2s!4v1744659400334!5m2!1sar!2s"
               className="h-full w-full"
+              // style="border:0;"
+              // allowfullscreen=""
               loading="lazy"
               title="Office Location"
               aria-label="Interactive map showing our office location"
-            />
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </section>
       </main>
