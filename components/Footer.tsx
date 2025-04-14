@@ -89,7 +89,7 @@ const Footer = () => {
                     href="mailto:info@eliteproperties.ae"
                     className="text-sm text-muted-foreground hover:text-foreground"
                   >
-                    info@eliteproperties.ae
+                    info@trm.ae
                   </a>
                 </div>
               </div>

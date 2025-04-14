@@ -64,7 +64,7 @@ export function PropertyDetails({ property }: { property: any }) {
           {/* Gallery Section */}
           <PropertyGallery images={property.images} status={property.status} />
           {/* Key Details */}
-          <section className="bg-card rounded-lg p-6 shadow-sm border" >
+          <section className="bg-card rounded-lg p-6 shadow-sm border">
             <h2 className="text-xl font-semibold mb-4 text-foreground">
               Property Details
             </h2>
@@ -143,18 +143,31 @@ export function PropertyDetails({ property }: { property: any }) {
             {/* Contact Options */}
             <div className="bg-background rounded-lg p-6 shadow-sm mt-6 space-y-3">
               <h3 className="font-medium text-foreground">Contact Options</h3>
-              <Button variant="outline" className="w-full gap-2">
-                <Phone className="w-4 h-4" />
-                Call Agent
-              </Button>
-              <Button variant="outline" className="w-full gap-2">
-                <MessageSquare className="w-4 h-4" />
-                WhatsApp
-              </Button>
-              <Button variant="outline" className="w-full gap-2">
-                <Mail className="w-4 h-4" />
-                Email Agent
-              </Button>
+              <a href="tel:+97142345678" className="block w-full">
+                <Button variant="outline" className="p-4 cursor-pointer  w-full">
+                  <Phone className="w-4 h-4" />
+                  Call Agent
+                </Button>
+              </a>
+
+              <a
+                href="https://api.whatsapp.com/send?phone=0971914555805"
+                className="block w-full "
+              >
+                <Button variant="outline" className="p-4 cursor-pointer  w-full">
+                  Contact Us <MessageSquare className="w-4 h-4" />
+                </Button>
+              </a>
+
+              <a
+                href="mailto:info@trm.ae"
+                className="block cursor-pointer"
+              >
+                <Button variant="outline" className="w-full gap-2 cursor-pointer">
+                  <Mail className="flex-shrink-0 size-5" />
+                  Email TRM
+                </Button>
+              </a>
             </div>
           </div>
         </div>

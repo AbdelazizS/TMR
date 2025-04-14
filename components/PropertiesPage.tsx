@@ -81,7 +81,7 @@ export default function PropertiesPage() {
           onSubmit={handleSearch}
           initialValues={{ propertyType, bedrooms, location, priceRange }}
         />
-        <h1 className="max-w-7xl mx-auto text-3xl font-bold mt-8 text-foreground">
+        <h1 className="max-w-7xl px-4 mx-auto text-3xl font-bold mt-8 text-foreground">
           Available Properties ({filteredProperties.length})
         </h1>
 
@@ -91,7 +91,7 @@ export default function PropertiesPage() {
             <Button onClick={clearFilters}>Clear All Filters</Button>
           </div>
         ) : (
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-8">
+          <div className="max-w-7xl px-4 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-8">
             {filteredProperties.map(property => (
               <PropertyCard key={property.id} property={property} />
             ))}

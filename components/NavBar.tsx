@@ -119,22 +119,22 @@ const Navbar5 = () => {
 
             <div className="flex items-center gap-4">
 
-              <a href="https://api.whatsapp.com/send?phone=0249129891773">
-                <Button className="p-4 cursor-pointer hover:scale-101 ">
+              <a href="https://api.whatsapp.com/send?phone=0249129891773" className="w-full">
+                <Button className="p-4 cursor-pointer hover:scale-101 w-full">
                   Contact Us <PhoneCallIcon />
                 </Button>
               </a>
+
+              <ThemeToggle />
+            </div>
               <Link href="/about_us" className="">
                 <Button
-                  className="p-4 cursor-pointer hover:scale-101 "
+                  className="p-4 cursor-pointer hover:scale-101 w-full "
                   variant={"outline"}
                 >
                   Learn More
                 </Button>
               </Link>
-
-              <ThemeToggle />
-            </div>
           </SheetContent>
         </Sheet>
       </div>

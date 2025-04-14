@@ -118,7 +118,7 @@ export default function PropertyFilters() {
 
   if (!isMounted) {
     return (
-      <div className="max-w-7xl mx-auto px-4 w-full">
+      <div className="w-full">
         <Skeleton className="h-36 w-full rounded-xl my-4" />
       </div>
     );

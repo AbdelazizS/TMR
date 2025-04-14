@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { Button } from '@/components/ui/button';
-import { Phone, MessageSquare, Mail, X } from 'lucide-react';
-import { useState } from 'react';
+import { Button } from "@/components/ui/button";
+import { Phone, MessageSquare, Mail, X } from "lucide-react";
+import { useState } from "react";
 
 export function ContactFab({ property }: { property: any }) {
   const [expanded, setExpanded] = useState(false);
@@ -13,22 +13,39 @@ export function ContactFab({ property }: { property: any }) {
         <div className="bg-background rounded-xl shadow-lg p-4 space-y-3 w-64">
           <div className="flex justify-between items-center">
             <h3 className="font-medium">Contact Agent</h3>
-            <button onClick={() => setExpanded(false)} className="text-muted-foreground">
+            <button
+              onClick={() => setExpanded(false)}
+              className="text-muted-foreground"
+            >
               <X className="w-5 h-5" />
             </button>
           </div>
-          <Button variant="outline" className="w-full gap-2">
-            <Phone className="w-4 h-4" />
-            Call Agent
-          </Button>
-          <Button variant="outline" className="w-full gap-2">
-            <MessageSquare className="w-4 h-4" />
-            WhatsApp
-          </Button>
-          <Button variant="outline" className="w-full gap-2">
-            <Mail className="w-4 h-4" />
-            Email Agent
-          </Button>
+
+          <a href="tel:+97142345678" className="w-full">
+            <Button className="p-4 cursor-pointer hover:scale-101 w-full">
+              <Phone className="w-4 h-4" />
+              Call Agent
+            </Button>
+          </a>
+
+          <a
+            href="https://api.whatsapp.com/send?phone=0971914555805"
+            className="w-full"
+          >
+            <Button className="p-4 cursor-pointer hover:scale-101 w-full">
+              Contact Us <MessageSquare className="w-4 h-4" />
+            </Button>
+          </a>
+
+          <a
+            href="mailto:info@trm.ae"
+            className="text-sm text-muted-foreground hover:text-foreground"
+          >
+            <Button variant="outline" className="w-full gap-2">
+              <Mail className="flex-shrink-0 size-5" />
+              Email TRM
+            </Button>
+          </a>
         </div>
       ) : (
         <Button
