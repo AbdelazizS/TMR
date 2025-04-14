@@ -28,9 +28,9 @@ const Footer = () => {
             </Link>
             <div className="space-y-4">
               <p className="text-sm text-foreground leading-relaxed">
-                TRM is a leading real estate agency in the UAE,
-                dedicated to delivering exceptional property solutions tailored
-                to your needs.
+                TRM is a leading real estate agency in the UAE, dedicated to
+                delivering exceptional property solutions tailored to your
+                needs.
               </p>
             </div>
           </div>
@@ -71,13 +71,13 @@ const Footer = () => {
                 <div className="flex items-center space-x-1">
                   <MapPin className="flex-shrink-0 size-5" />
                   <span className="text-sm text-foreground/80">
-                    Level 15, Burj Khalifa Tower, Downtown Dubai, UAE
+                    Bussines Village , Tower -B- office 217 - Deira m Duabi UAE
                   </span>
                 </div>
                 <div className="flex items-center space-x-1">
                   <PhoneCall className="flex-shrink-0 size-5" />
                   <a
-                    href="tel:+97142345678"
+                    href="tel:+971 4 234 5678"
                     className="text-sm text-muted-foreground hover:text-foreground"
                   >
                     +971 4 234 5678
@@ -86,7 +86,7 @@ const Footer = () => {
                 <div className="flex items-center space-x-1">
                   <Mail className="flex-shrink-0 size-5" />
                   <a
-                    href="mailto:info@eliteproperties.ae"
+                    href="mailto:info@trm-realestatecom.org"
                     className="text-sm text-muted-foreground hover:text-foreground"
                   >
                     info@trm.ae
