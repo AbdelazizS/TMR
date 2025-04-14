@@ -151,7 +151,7 @@ export function PropertyDetails({ property }: { property: any }) {
               </a>
 
               <a
-                href="https://api.whatsapp.com/send?phone=0971564418632"
+                href="https://wa.me/+971564418632"
                 className="block w-full "
               >
                 <Button variant="outline" className="p-4 cursor-pointer  w-full">
