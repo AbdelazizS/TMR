@@ -1,10 +1,7 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
-  images: {
-    domains: ['componentland.com'],
-  },
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // typescript: {
+  //   ignoreBuildErrors: true, // Temporary measure
+  // },
 };
-
-export default nextConfig;
+module.exports = nextConfig;

@@ -2,24 +2,22 @@ import Footer from "@/components/Footer";
 import Navbar5 from "@/components/NavBar";
 import { PropertyDetails } from "@/components/property-details";
 import { getPropertyBySlug } from "@/lib/properties";
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-type Props = {
-  params: { slug: string };
+// Minimal type that always works with Next.js dynamic routes
+type PageParams = {
+  params: { 
+    slug: string 
+  };
   searchParams?: { [key: string]: string | string[] | undefined };
 };
 
-export async function generateMetadata(
-  { params }: Props,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
   const { slug } = params;
   const property = await getPropertyBySlug(slug);
 
   if (!property) return notFound();
-
-  const previousImages = (await parent).openGraph?.images || [];
 
   return {
     title: `${property.title} in ${property.location} | TRM Real Estate Dubai`,
@@ -38,15 +36,12 @@ export async function generateMetadata(
     openGraph: {
       title: `${property.title} | TRM Real Estate`,
       description: `${property.description.substring(0, 160)} | Located in ${property.location}. Price: ${property.price}`,
-      images: [
-        {
-          url: property.images[0],
-          width: 1200,
-          height: 630,
-          alt: property.title,
-        },
-        ...previousImages,
-      ],
+      images: [{
+        url: property.images[0],
+        width: 1200,
+        height: 630,
+        alt: property.title,
+      }],
       locale: 'en_US',
       type: 'article',
       url: `/properties/${slug}`,
@@ -55,13 +50,13 @@ export async function generateMetadata(
     twitter: {
       card: 'summary_large_image',
       title: `${property.title} | TRM Real Estate`,
-      description: `${property.description}`,
+      description: property.description,
       images: [property.images[0]],
     },
   };
 }
 
-export default async function PropertyPage({ params }: Props) {
+export default async function PropertyPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const property = await getPropertyBySlug(slug);
 
