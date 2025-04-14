@@ -37,10 +37,7 @@ const FeaturedAreaCard = ({ cover, title, properties, id }: CardProps) => {
               {/* <p className="text-foreground font-semibold">{title}</p> */}
               <p className="text-sm text-muted-foreground">{properties}</p>
 
-              <Link
-                aria-label={`View details for ${title}`}
-                href="/properties"
-              >
+              <Link aria-label={`View details for ${title}`} href="/properties">
                 <Button className="mt-4 cursor-pointer">
                   View Details <ArrowUpRightFromSquare />
                 </Button>

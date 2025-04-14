@@ -5,15 +5,12 @@ import { getPropertyBySlug } from "@/lib/properties";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-// Minimal type that always works with Next.js dynamic routes
-type PageParams = {
-  params: { 
-    slug: string 
-  };
-  searchParams?: { [key: string]: string | string[] | undefined };
-};
 
-export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
   const { slug } = params;
   const property = await getPropertyBySlug(slug);
 
@@ -55,8 +52,11 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
     },
   };
 }
-
-export default async function PropertyPage({ params }: { params: { slug: string } }) {
+export default async function PropertyPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const { slug } = params;
   const property = await getPropertyBySlug(slug);
 

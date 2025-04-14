@@ -57,7 +57,7 @@ export default function ContactPage() {
       >
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero.jpg"
+            src="/hero.jpg"
             alt="Dubai Marina skyline at dusk"
             fill
             loading="eager"
