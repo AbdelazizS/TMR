@@ -50,7 +50,7 @@ export default function PropertiesListing() {
   return (
     <>
       <section className="max-w-7xl px-4 mx-auto py-16 md:py-20 lg:py-24  ">
-        {properties.length === 0 ? (
+        {properties?.length === 0 ? (
           <div className="text-center py-16 md:py-20 lg:py-24 space-y-6">
             <div className="flex flex-col items-center justify-center space-y-2">
               <MapPin className="w-14 h-14 text-primary bg-muted p-2 font-bold rounded-full" />
