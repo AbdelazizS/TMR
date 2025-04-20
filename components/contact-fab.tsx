@@ -29,7 +29,7 @@ export function ContactFab({ property }: { property: any }) {
           </a>
 
           <a
-           href="https://wa.me/+971564418632"
+           href="https://wa.me/+971559550372"
             className="w-full"
           >
             <Button className="p-4 cursor-pointer hover:scale-101 w-full">

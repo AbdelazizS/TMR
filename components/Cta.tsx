@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
@@ -61,7 +62,7 @@ const CTASection = () => {
           {/* Action Buttons */}
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="tel:+97142345678"
+              href="tel:+971564418632"
               className="block text-xl font-semibold text-primary"
               aria-label="Call our main office number"
             >

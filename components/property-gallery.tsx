@@ -8,11 +8,11 @@ import {
 import { Heart, MoveLeft, MoveRight, Share2, ZoomIn } from "lucide-react";
 import Image from "next/image";
 
-type PropertyStatus = "for-sale" | "for-rent" | "sold" | "under-offer" | "new";
+type PropertyStatus = "for_sale" | "for_rent" | "sold" | "under_offer" | "new";
 
 export function PropertyGallery({
   images,
-  status = "for-sale",
+  status = "for_rent",
   favorite = false,
 }: {
   images: string[];
@@ -20,12 +20,14 @@ export function PropertyGallery({
   favorite?: boolean;
 }) {
   const statusStyles = {
-    "for-sale": "bg-blue-600 text-white",
-    "for-rent": "bg-emerald-600 text-white",
+    "for_sale": "bg-blue-600 text-white",
+    "for_rent": "bg-emerald-600 text-white",
     sold: "bg-red-600 text-white",
-    "under-offer": "bg-yellow-500 text-gray-900",
+    "under_offer": "bg-yellow-500 text-gray-900",
     new: "bg-purple-600 text-white",
   };
+
+  
 
   return (
     <div className="relative group">
@@ -33,7 +35,7 @@ export function PropertyGallery({
       <div
         className={`absolute top-4 left-0 px-4 py-1 text-sm font-semibold z-10 shadow-sm ${statusStyles[status]}`}
       >
-        {status.replace('-', ' ').toUpperCase()}
+        {status.replace('_', ' ').toUpperCase()}
       </div>
 
   

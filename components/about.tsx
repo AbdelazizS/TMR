@@ -1,14 +1,15 @@
+'use client'
 import { Eye } from "lucide-react";
 import Image from "next/image";
 
 const AboutPage = () => {
   return (
-    <section className="py-16 md:py-20 lg:py-28">
+    <section className="py-16 md:py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid gap-8 lg:grid-cols-2">
           <div className="">
             <Image
-              src="/images/team.webp"
+              src="/team.png"
               alt="working on housing"
               width={1300}
               height={900}

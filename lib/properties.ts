@@ -1,8 +1,10 @@
+import { api } from "./api";
+
 // Sample property data - in a real app, you'd fetch this from a CMS or API
 const properties = [
   {
     id: '1',
-    slug: 'modern-downtown-loft',
+    slug: 'sed-dolore-architecto-spHfS',
     title: 'Modern Downtown Loft', 
     description: 'Exquisite beachfront villa in Palm Jumeirah with private beach access, infinity pool, and state-of-the-art smart home technology.',
     address: 'Palm Jumeirah, Dubai, UAE',
@@ -222,13 +224,13 @@ const properties = [
   
   export async function getPropertyBySlug(slug: string) {
     await delay();
-    const property = properties.find(p => p.slug === slug);
+    const property = await api.get(`/properties/${slug}`);
     
     if (!property) {
       throw new Error('Property not found');
     }
     
-    return property;
+    return property.data.data;
   }
   
   export async function getFeaturedProperties() {

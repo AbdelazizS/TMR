@@ -19,7 +19,7 @@ const Footer = () => {
           <div className="md:col-span-4 lg:col-span-3">
             <Link href="/" className="block mb-6">
               <Image
-                src="/images/trm-logo.png"
+                src="/tmr.png"
                 alt="Elite Properties"
                 width={160}
                 height={40}
@@ -28,7 +28,7 @@ const Footer = () => {
             </Link>
             <div className="space-y-4">
               <p className="text-sm text-foreground leading-relaxed">
-                TRM is a leading real estate agency in the UAE, dedicated to
+                TMR is a leading real estate agency in the UAE, dedicated to
                 delivering exceptional property solutions tailored to your
                 needs.
               </p>
@@ -41,10 +41,10 @@ const Footer = () => {
               Quick Links
             </h3>
             <nav className="space-y-3">
-              <FooterLink href="/about">About Us</FooterLink>
-              <FooterLink href="/careers">Careers</FooterLink>
-              <FooterLink href="/contact">Contact</FooterLink>
-              <FooterLink href="/faq">FAQ</FooterLink>
+              <FooterLink href="/about_us">About Us</FooterLink>
+              <FooterLink href="/">Careers</FooterLink>
+              <FooterLink href="/contact_us">Contact</FooterLink>
+              <FooterLink href="/about_us">FAQ</FooterLink>
             </nav>
           </div>
 
@@ -54,10 +54,10 @@ const Footer = () => {
               Property Types
             </h3>
             <nav className="grid grid-cols-1 gap-3">
-              <FooterLink href="/offices">Office Spaces</FooterLink>
-              <FooterLink href="/apartments">Luxury Apartments</FooterLink>
-              <FooterLink href="/commercial">Commercial Properties</FooterLink>
-              <FooterLink href="/developments">New Developments</FooterLink>
+              <FooterLink href="/properties?type=office">Office Spaces</FooterLink>
+              <FooterLink href="/properties?type=apartment">Luxury Apartments</FooterLink>
+              <FooterLink href="/properties">Commercial Properties</FooterLink>
+              <FooterLink href="/properties">New Developments</FooterLink>
             </nav>
           </div>
 
@@ -71,25 +71,25 @@ const Footer = () => {
                 <div className="flex items-center space-x-1">
                   <MapPin className="flex-shrink-0 size-5" />
                   <span className="text-sm text-foreground/80">
-                    Bussines Village , Tower -B- office 217 - Deira Duabi UAE
+                    Bussines Village , Tower -B- floor 6 - Deira Duabi UAE
                   </span>
                 </div>
                 <div className="flex items-center space-x-1">
                   <PhoneCall className="flex-shrink-0 size-5" />
                   <a
-                    href="tel:+971 4 234 5678"
+                    href="tel:+971564418632"
                     className="text-sm text-muted-foreground hover:text-foreground"
                   >
-                    +971 4 234 5678
+                    971 564 418 632
                   </a>
                 </div>
                 <div className="flex items-center space-x-1">
                   <Mail className="flex-shrink-0 size-5" />
                   <a
-                    href="mailto:info@trm-realestatecom.org"
+                    href="mailto:info@tmr-realestatecom.org"
                     className="text-sm text-muted-foreground hover:text-foreground"
                   >
-                    info@trm-realestatecom.org
+                    info@tmr-realestatecom.org
                   </a>
                 </div>
               </div>
@@ -108,20 +108,14 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="max-w-7xl mx-auto px-4 mt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
         <div className="order-2 md:order-1">
-          © {new Date().getFullYear()} TRM Properties , All rights reserved.
+          © {new Date().getFullYear()} TMR Properties , All rights reserved.
         </div>
         <div className="order-1 md:order-2 flex space-x-6">
           <Link
-            href="/privacy"
+            href="/policy"
             className="hover:text-foreground transition-colors"
           >
             Privacy Policy
-          </Link>
-          <Link
-            href="/terms"
-            className="hover:text-foreground transition-colors"
-          >
-            Terms of Service
           </Link>
         </div>
       </div>

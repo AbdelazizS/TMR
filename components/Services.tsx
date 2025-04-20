@@ -1,4 +1,5 @@
 // components/Services.tsx
+"use client";
 import { Home, DollarSign, KeyRound, Building2 } from "lucide-react";
 
 const services = [
@@ -44,7 +45,7 @@ const Services = () => (
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         {services.map(({ title, description, icon: Icon }) => (
-          <div className="p-6 rounded-3xl border bg-card  relative overflow-hidden">
+          <div key={title} className="p-6 rounded-3xl border bg-card  relative overflow-hidden">
             <div className="rounded-xl bg-muted  p-3 w-max relative">
             <Icon className="w-6 h-6 text-primary font-bold" />
             </div>

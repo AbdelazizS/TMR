@@ -5,7 +5,6 @@ import { getPropertyBySlug } from "@/lib/properties";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-
 export async function generateMetadata({
   params,
 }: {
@@ -17,7 +16,7 @@ export async function generateMetadata({
   if (!property) return notFound();
 
   return {
-    title: `${property.title} in ${property.location} | TRM Real Estate Dubai`,
+    title: `${property.title} in ${property.location} | TMR Real Estate Dubai`,
     description: property.description.substring(0, 160),
     alternates: {
       canonical: `/properties/${slug}`,
@@ -25,39 +24,42 @@ export async function generateMetadata({
     keywords: [
       property.title,
       property.location,
-      'Dubai real estate',
-      'TRM Real Estate',
-      'property for sale',
-      'property for rent',
+      "Dubai real estate",
+      "TMR Real Estate",
+      "property for sale",
+      "property for rent",
     ],
     openGraph: {
-      title: `${property.title} | TRM Real Estate`,
-      description: `${property.description.substring(0, 160)} | Located in ${property.location}. Price: ${property.price}`,
-      images: [{
-        url: property.images[0],
-        width: 1200,
-        height: 630,
-        alt: property.title,
-      }],
-      locale: 'en_US',
-      type: 'article',
+      title: `${property.title} | TMR Real Estate`,
+      // description: `${property.description.substring(0, 160)} | Located in ${property.location}. Price: ${property.price}`,
+      images: [
+        {
+          url: property.images?.[0] || "/default-og-image.jpg",
+          width: 1200,
+          height: 630,
+          alt: property.title,
+        },
+      ],
+      locale: "en_US",
+      type: "article",
       url: `/properties/${slug}`,
-      siteName: 'TRM Real Estate',
+      siteName: "TMR Real Estate",
     },
     twitter: {
-      card: 'summary_large_image',
-      title: `${property.title} | TRM Real Estate`,
+      card: "summary_large_image",
+      title: `${property.title} | TMR Real Estate`,
       description: property.description,
-      images: [property.images[0]],
+      images: [property.images?.[0] || "/default-twitter-image.jpg"],
     },
   };
 }
+
 export default async function PropertyPage({
   params,
 }: {
   params: { slug: string };
 }) {
-  const { slug } = params;
+  const { slug } = params;  
   const property = await getPropertyBySlug(slug);
 
   if (!property) {

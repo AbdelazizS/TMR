@@ -42,7 +42,7 @@ const Navbar5 = () => {
       <div className="relative max-w-7xl mx-auto flex overflow-hidden p-4 flex-row items-center justify-between">
         <Link href="/" className="">
           <Image
-            src="/images/trm-logo.png"
+            src="/tmr.png"
             alt="Elite Properties"
             width={100}
             height={10}
@@ -92,7 +92,7 @@ const Navbar5 = () => {
               <SheetTitle>
                 <Link href="/" className="">
                   <Image
-                    src="/images/trm-logo.png"
+                    src="/tmr.png"
                     alt="Elite Properties"
                     width={100}
                     height={10}
@@ -105,7 +105,7 @@ const Navbar5 = () => {
             <NavigationMenu className=" items-start">
               <NavigationMenuList className="flex-col items-start justify-items-start">
                 {features.map((feature, index) => (
-                  <NavigationMenuItem className="w-full" key={feature.title}>
+                  <NavigationMenuItem  className="w-full" key={feature.title}>
                     <NavigationMenuLink
                       href={feature.href}
                       className="rounded-md p-3 transition-colors hover:bg-muted/70"

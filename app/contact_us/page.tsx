@@ -7,13 +7,13 @@ import Image from "next/image";
 import { Fragment } from "react";
 
 export const metadata: Metadata = {
-  title: "Contact Us | TRM Real Estate Dubai",
+  title: "Contact Us | TMR Real Estate Dubai",
   description:
-    "Get in touch with TRM Real Estate for expert guidance on buying, selling, or renting properties in Dubai. We’re here to help you find your dream home or investment.",
+    "Get in touch with TMR Real Estate for expert guidance on buying, selling, or renting properties in Dubai. We’re here to help you find your dream home or investment.",
   keywords: [
-    "TRM Real Estate",
+    "TMR Real Estate",
     "Dubai real estate",
-    "contact TRM",
+    "contact TMR",
     "real estate agent Dubai",
     "property consultation",
     "buy property Dubai",
@@ -21,17 +21,17 @@ export const metadata: Metadata = {
     "real estate inquiry",
   ],
   openGraph: {
-    title: "Contact TRM Real Estate Dubai",
+    title: "Contact TMR Real Estate Dubai",
     description:
-      "Need help with real estate in Dubai? Contact TRM Real Estate for personalized assistance with buying, selling, or renting properties.",
+      "Need help with real estate in Dubai? Contact TMR Real Estate for personalized assistance with buying, selling, or renting properties.",
     url: "https://yourdomain.com/contact_us",
-    siteName: "TRM Real Estate",
+    siteName: "TMR Real Estate",
     images: [
       {
-        url: "/images/trm-logo.png",
+        url: "/tmr.png",
         width: 1200,
         height: 630,
-        alt: "TRM Real Estate Logo",
+        alt: "TMR Real Estate Logo",
       },
     ],
     locale: "en_US",
@@ -39,10 +39,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact TRM Real Estate Dubai",
+    title: "Contact TMR Real Estate Dubai",
     description:
-      "Reach out to TRM Real Estate for any inquiries related to properties in Dubai. Our team is ready to assist you.",
-    images: ["/images/trm-logo.png"],
+      "Reach out to TMR Real Estate for any inquiries related to properties in Dubai. Our team is ready to assist you.",
+    images: ["/tmr.png"],
   },
 };
 
@@ -106,8 +106,8 @@ export default function ContactPage() {
           {/* Phone Card */}
           <article className="rounded-2xl bg-card p-8 shadow-lg border transition-all ">
             <div className="mb-6 flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/40">
-                <PhoneCall className="h-6 w-6 " />
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/60">
+                <PhoneCall className="h-6 w-6 text-white " />
               </div>
               <h2 className="text-2xl font-bold text-foreground">
                 24/7 Support
@@ -115,28 +115,28 @@ export default function ContactPage() {
             </div>
             <div className="space-y-2">
               <a
-                href="tel:+9711564418632"
+                href="tel:+971564418632"
                 className="block text-xl font-semibold text-primary"
                 aria-label="Call our main office number"
               >
                 +971 156 441 8632
               </a>
-              <p className="text-sm text-muted-foreground">
+              {/* <p className="text-sm text-muted-foreground">
                 <a
-                  href="tel:+9715596600372"
+                  href="tel:+971564418632"
                   aria-label="Call our main office number"
                 >
                   Emergency: +971 559 660 0372
                 </a>
-              </p>
+              </p> */}
             </div>
           </article>
 
           {/* Location Card */}
           <article className="rounded-2xl bg-card p-8 shadow-lg border transition-all l">
             <div className="mb-6 flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/40">
-                <MapPin className="h-6 w-6" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/60">
+                <MapPin className="h-6 w-6 text-white" />
               </div>
               <h2 className="text-2xl font-bold text-foreground">
                 Our Offices
@@ -146,7 +146,7 @@ export default function ContactPage() {
               <address className="not-italic text-muted-foreground">
                 <p className="font-medium text-foreground">Main Office</p>
                 <p>Bussines Village, Tower -B-</p>
-                <p>office 217 - Deira Duabi UAEE</p>
+                <p>floor 6 - Deira Duabi UAE</p>
               </address>
               <div className="pt-4">
                 <p className="text-sm font-medium text-foreground">
@@ -159,8 +159,8 @@ export default function ContactPage() {
           {/* Digital Card */}
           <article className="rounded-2xl bg-card p-8 shadow-lg border transition-all ">
             <div className="mb-6 flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/40">
-                <Mail className="h-6 w-6 " />
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/60">
+                <Mail className="h-6 w-6 text-white " />
               </div>
               <h2 className="text-2xl font-bold text-foreground">
                 Digital Connect
@@ -168,19 +168,19 @@ export default function ContactPage() {
             </div>
             <div className="space-y-4">
               <a
-                href="mailto:info@trm-realestatecom.org"
+                href="mailto:info@tmr-realestatecom.org"
                 className="block font-medium text-primary"
               >
-                info@trm-realestatecom.org
+                info@tmr-realestatecom.org
               </a>
               <div className="flex gap-4 pt-2">
-                <a
+                {/* <a
                   href="/Linkedin"
                   className="flex h-12 w-12 items-center justify-center rounded-full bg-muted/80 hover:bg-muted transition-all"
                   aria-label="Connect via Linkedin"
                 >
                   <Linkedin className="h-6 w-6 text-foreground" />
-                </a>
+                </a> */}
               </div>
             </div>
           </article>
@@ -188,15 +188,18 @@ export default function ContactPage() {
 
         <section className="mt-6 md:mt-10 grid gap-12">
           <div className="h-[522px] border-2 overflow-hidden rounded-2xl shadow">
+          
+
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d28865.380014951268!2d55.343189921314305!3d25.26478193760498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sBussines%20Village%20%2C%20Tower%20-B-%20office%20217%20-%20Deira%20Duabi%20UAE!5e0!3m2!1sar!2s!4v1744659400334!5m2!1sar!2s"
-              className="h-full w-full"
-              // style="border:0;"
-              // allowfullscreen=""
-              loading="lazy"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14433.385174008556!2d55.3448567445801!3d25.258933783246533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5cda192a2ea7%3A0x71a4bae5fbdac1ea!2z2YLYsdmK2Kkg2KfZhNij2LnZhdin2YQ!5e0!3m2!1sar!2sus!4v1745139940526!5m2!1sar!2sus"
               title="Office Location"
               aria-label="Interactive map showing our office location"
               referrerPolicy="no-referrer-when-downgrade"
+              // style="border:0;"
+              // allowfullscreen=""
+              loading="lazy"
+              loading="lazy"
+              className="h-full w-full"
             ></iframe>
           </div>
         </section>

@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
@@ -8,11 +12,25 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
-import Link from "next/link";
+import { Loader2 } from "lucide-react";
+
 const Hero = () => {
-  const handelSearch = () => {
-    console.log("handelSearch");
+  const router = useRouter();
+  const [search, setSearch] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [type, setType] = useState<string | undefined>(undefined);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    const query = new URLSearchParams();
+
+    if (search) query.set("search", search);
+    if (type && type !== "all") query.set("status", type);
+
+    router.push(`/properties?${query.toString()}`);
   };
+
   return (
     <section
       className="relative w-full h-[calc(100vh-4rem)] overflow-hidden"
@@ -20,22 +38,18 @@ const Hero = () => {
       aria-label="Real estate hero section"
     >
       <Image
-      
-        src="/hero.jpg" // ensure this image is placed in your public/images folder
+        src="/hero.jpg"
         alt="Modern real estate property background"
         layout="fill"
         objectFit="cover"
-        priority={true}
+        priority
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black via-black/60 to-black/20" />
 
-      <div
-        // ref={heroRef}
-        className="relative container mx-auto px-4 py-12 h-full flex flex-col items-center justify-center text-center"
-      >
+      <div className="relative container mx-auto px-4 py-12 h-full flex flex-col items-center justify-center text-center">
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
           Your
-          <span className="mx-1 text-transparent bg-clip-text  bg-gradient-to-tr from-blue-600 to-blue-700">
+          <span className="mx-1 text-transparent bg-clip-text bg-gradient-to-tr from-blue-600 to-blue-700">
             Trusted
           </span>
           Real Estate Partner.
@@ -43,38 +57,38 @@ const Hero = () => {
 
         <p className="text-lg md:text-xl text-white mb-8">
           We help you buy, sell, or rent properties with transparency and ease.
-          Discover the difference today.
         </p>
 
-        {/* Search Filter Form */}
         <form
+          onSubmit={handleSubmit}
           className="w-full max-w-xl bg-card bg-opacity-90 rounded-lg shadow-md p-6"
           role="search"
           aria-label="Property search filter"
         >
           <div className="flex flex-col md:flex-row items-center gap-4">
             <Input
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
               type="text"
-              placeholder="Enter city name , .."
-              aria-label="Search by location"
+              placeholder="Enter city or location ..."
+              aria-label="Search by location or keyword"
             />
 
-            <Select>
+            <Select onValueChange={(val) => setType(val)} defaultValue="all">
               <SelectTrigger className="w-[180px]">
                 <SelectValue placeholder="Type" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="All">All</SelectItem>
-                <SelectItem value="rent">Rent</SelectItem>
-                <SelectItem value="buy">Buy</SelectItem>
-                <SelectItem value="sell">Sell</SelectItem>
+                <SelectItem value="all">All</SelectItem>
+                <SelectItem value="for_rent">For Rent</SelectItem>
+                <SelectItem value="for_sell">For Sell</SelectItem>
               </SelectContent>
             </Select>
-            <Link href={"/properties"}>
-              <Button className="py-3 px-5 ">
-                Search
-              </Button>
-            </Link>
+
+            <Button disabled={loading} type="submit" className="py-3 px-6">
+              {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+              Search
+            </Button>
           </div>
         </form>
       </div>

@@ -14,35 +14,35 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'TRM Real Estate Agency | Properties in Dubai',
-  description: 'Find luxury villas, apartments, and commercial spaces in Dubai with TRM Real Estate — your trusted property partner.',
+  title: 'TMR Real Estate Agency | Properties in Dubai',
+  description: 'Find luxury villas, apartments, and commercial spaces in Dubai with TMR Real Estate — your trusted property partner.',
 
   keywords: [
     'Real Estate Dubai',
     'Dubai Properties',
     'Villas for Sale Dubai',
     'Apartments in Dubai',
-    'TRM Real Estate Agency',
+    'TMR Real Estate Agency',
     'Luxury Properties Dubai'
   ],
 
-  authors: [{ name: 'TRM Real Estate Agency', url: 'https://yourdomain.com' }],
-  creator: 'TRM Real Estate',
-  publisher: 'TRM Real Estate Agency',
+  authors: [{ name: 'TMR Real Estate Agency', url: 'https://yourdomain.com' }],
+  creator: 'TMR Real Estate',
+  publisher: 'TMR Real Estate Agency',
 
   metadataBase: new URL('https://yourdomain.com'),
 
   openGraph: {
-    title: 'TRM Real Estate Agency | Properties in Dubai',
-    description: 'Discover luxury villas, apartments, and commercial spaces in Dubai with TRM Real Estate.',
+    title: 'TMR Real Estate Agency | Properties in Dubai',
+    description: 'Discover luxury villas, apartments, and commercial spaces in Dubai with TMR Real Estate.',
     url: 'https://yourdomain.com',
-    siteName: 'TRM Real Estate Agency',
+    siteName: 'TMR Real Estate Agency',
     images: [
       {
-        url: '/images/trm-logo.png',
+        url: '/tmr.png',
         width: 800,
         height: 600,
-        alt: 'TRM Real Estate Logo',
+        alt: 'TMR Real Estate Logo',
       },
     ],
     locale: 'en_US',
@@ -51,17 +51,17 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary_large_image',
-    title: 'TRM Real Estate Agency | Properties in Dubai',
-    description: 'Find luxury villas, apartments, and commercial spaces in Dubai with TRM Real Estate.',
-    images: ['/images/trm-logo.png'],
-    site: '@TRMRealEstate', // optional
-    creator: '@TRMRealEstate', // optional
+    title: 'TMR Real Estate Agency | Properties in Dubai',
+    description: 'Find luxury villas, apartments, and commercial spaces in Dubai with TMR Real Estate.',
+    images: ['/images/tmr.png'],
+    site: '@TMRRealEstate', // optional
+    creator: '@TMRRealEstate', // optional
   },
 
   icons: {
-    icon: '/images/trm-logo.png',
-    shortcut: '/images/trm-logo.png',
-    apple: '/images/trm-logo.png',
+    icon: '/images/tmr.png',
+    shortcut: '/images/tmr.png',
+    apple: '/images/tmr.png',
   },
 };
 

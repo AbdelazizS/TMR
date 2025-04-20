@@ -27,6 +27,7 @@ import { NeighborhoodSection } from "./neighborhood-section";
 import { ContactFab } from "./contact-fab";
 
 export function PropertyDetails({ property }: { property: any }) {
+
   return (
     <div className="relative">
       {/* Property Header */}
@@ -105,67 +106,74 @@ export function PropertyDetails({ property }: { property: any }) {
             <h2 className="text-xl font-semibold mb-4 text-foreground">
               Description
             </h2>
-            <div
-              className="prose text-foreground/90 max-w-none"
-              dangerouslySetInnerHTML={{ __html: property.description }}
-            />
+            <p className="prose text-foreground/90 max-w-none">
+              {property.description}
+            </p>
           </section>
 
-          {/* Features */}
-          <FeaturesList features={property.features} />
-
-          {/* Floor Plans */}
-          {/* {property.floorPlans && (
-            <section className="bg-background rounded-lg p-6 shadow-sm">
-              <h2 className="text-xl font-semibold mb-4 text-foreground">Floor Plans</h2>
-              Floor plans component
+          {property.video_url && (
+            <section className="bg-card rounded-lg p-6 shadow-sm border mt-8">
+              <h2 className="text-xl font-semibold mb-4 text-foreground">
+                Property Video
+              </h2>
+              <video controls width="640" height="360">
+                <source src="/videos/property-tour.mp4" type="video/mp4" />
+                <track
+                  src="/captions/property-tour.en.vtt"
+                  kind="captions"
+                  label="English"
+                  default
+                />
+                Your browser does not support the video tag.
+              </video>
             </section>
-          )} */}
+          )}
 
           {/* Neighborhood */}
-          <NeighborhoodSection neighborhood={property.neighborhood} />
-
-          {/* Map */}
-          {/* <section className="bg-background rounded-lg p-6 shadow-sm">
-            <h2 className="text-xl font-semibold mb-4 text-foreground">Location</h2>
-            <div className="h-96 bg-muted rounded-lg overflow-hidden">
-              Map component
-            </div>
-          </section> */}
+          <NeighborhoodSection
+            amenities={property.amenities}
+            neighborhood={property.neighborhood}
+          />
         </div>
 
         {/* Right Column - Sidebar */}
         <div className="space-y-6">
           {/* Inquiry Form - Sticky */}
-          <div className="sticky top-24">
-            <InquiryForm property={property} />
+          <div className="sticky top-6">
+            {/* <InquiryForm property={property} /> */}
 
             {/* Contact Options */}
             <div className="bg-background rounded-lg p-6 shadow-sm mt-6 space-y-3">
               <h3 className="font-medium text-foreground">Contact Options</h3>
               <a href="tel:+971564418632" className="block w-full">
-                <Button variant="outline" className="p-4 cursor-pointer  w-full">
+                <Button
+                  variant="outline"
+                  className="p-4 cursor-pointer  w-full"
+                >
                   <Phone className="w-4 h-4" />
                   Call Agent
                 </Button>
               </a>
 
-              <a
-                href="https://wa.me/+971564418632"
-                className="block w-full "
-              >
-                <Button variant="outline" className="p-4 cursor-pointer  w-full">
+              <a href="https://wa.me/+971564418632" className="block w-full ">
+                <Button
+                  variant="outline"
+                  className="p-4 cursor-pointer  w-full"
+                >
                   Contact Us <MessageSquare className="w-4 h-4" />
                 </Button>
               </a>
 
               <a
-                href="mailto:info@trm-realestatecom.org"
+                href="mailto:info@tmr-realestatecom.org"
                 className="block cursor-pointer"
               >
-                <Button variant="outline" className="w-full gap-2 cursor-pointer">
+                <Button
+                  variant="outline"
+                  className="w-full gap-2 cursor-pointer"
+                >
                   <Mail className="flex-shrink-0 size-5" />
-                  Email TRM
+                  Email TMR
                 </Button>
               </a>
             </div>
