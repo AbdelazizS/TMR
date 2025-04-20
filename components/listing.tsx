@@ -20,9 +20,8 @@ export default function PropertiesListing() {
         const response = await api.get("/properties", {
           params: { featured: true },
         });
-        console.log(response);
 
-        setProperties(response.data.data);
+        setProperties(response?.data?.data);
       } catch (error) {
         console.error("Failed to load properties:", error);
       } finally {

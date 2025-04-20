@@ -36,13 +36,12 @@ export default function PropertiesClient({ filters }: { filters: Filters }) {
       // Step 2: Extract the 'type' field
       // if (filters.type) cfilterParams.append('status', filters.status);
 
-      console.log(filterParams);
 
       try {
         const response = await api.get("/properties", {
           params: { status: parsedValue.status, search: parsedValue.search , type: parsedValue.type }, // Send the filters as URLSearchParams
         });
-        setProperties(response.data.data);
+        setProperties(response?.data?.data);
       } catch (error) {
         console.error("Failed to load properties:", error);
       } finally {

@@ -16,25 +16,25 @@ export async function generateMetadata({
   if (!property) return notFound();
 
   return {
-    title: `${property.title} in ${property.location} | TMR Real Estate Dubai`,
+    title: `${property?.title} in ${property?.location} | TMR Real Estate Dubai`,
     description: property.description.substring(0, 160),
     alternates: {
       canonical: `/properties/${slug}`,
     },
     keywords: [
-      property.title,
-      property.location,
+      property?.title,
+      property?.location,
       "Dubai real estate",
       "TMR Real Estate",
       "property for sale",
       "property for rent",
     ],
     openGraph: {
-      title: `${property.title} | TMR Real Estate`,
+      title: `${property?.title} | TMR Real Estate`,
       // description: `${property.description.substring(0, 160)} | Located in ${property.location}. Price: ${property.price}`,
       images: [
         {
-          url: property.images?.[0] || "/default-og-image.jpg",
+          url: property?.images?.[0] || "/default-og-image.jpg",
           width: 1200,
           height: 630,
           alt: property.title,
@@ -47,9 +47,9 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `${property.title} | TMR Real Estate`,
-      description: property.description,
-      images: [property.images?.[0] || "/default-twitter-image.jpg"],
+      title: `${property?.title} | TMR Real Estate`,
+      description: property?.description,
+      images: [property?.images?.[0] || "/default-twitter-image.jpg"],
     },
   };
 }
