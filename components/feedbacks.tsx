@@ -42,10 +42,10 @@ export default function Testimonials() {
                 </p>
                 <footer>
                   <div className="text-lg font-semibold text-foreground/80 hover:text-foreground/70">
-                    John Smith
+                    Your FullName
                   </div>
                   <p className="text-sm font-medium text-foreground/50">
-                    Founder & EO, [TMR Real Estate]
+                    Founder & CEO, [TMR Real Estates]
                   </p>
                 </footer>
               </blockquote>
