@@ -48,6 +48,7 @@ export default function Testimonials() {
                     Founder & CEO, [TMR Real Estates]
                   </p>
                 </footer>
+                
               </blockquote>
             </div>
           </div>
