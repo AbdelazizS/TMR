@@ -81,7 +81,7 @@ export default function PropertiesClient({ filters }: { filters: Filters }) {
           Available Properties ({properties.length})
         </h1>
 
-        {properties.length === 0 ? (
+        {properties?.length === 0 ? (
           <div className="text-center py-12 space-y-4">
             <p className="text-muted-foreground">No properties found.</p>
           </div>
