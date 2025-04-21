@@ -72,7 +72,7 @@ const CTASection = () => {
               </Button>
             </a>
             <Link
-              href="/listings"
+              href="/properties"
               aria-label="Browse current property listings"
             >
               <Button className="py-6 cursor-pointer" variant={"outline"}>
