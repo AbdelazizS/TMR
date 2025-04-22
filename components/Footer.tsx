@@ -17,6 +17,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-12 gap-8  pb-12">
           {/* Branding Column */}
           <div className="md:col-span-4 lg:col-span-3">
+            
             <Link href="/" className="block mb-6">
               <Image
                 src="/tmr.png"
@@ -42,7 +43,7 @@ const Footer = () => {
             </h3>
             <nav className="space-y-3">
               <FooterLink href="/about_us">About Us</FooterLink>
-              <FooterLink href="/">Careers</FooterLink>
+              <FooterLink href="/contact_us">Careers</FooterLink>
               <FooterLink href="/contact_us">Contact</FooterLink>
               <FooterLink href="/about_us">FAQ</FooterLink>
             </nav>
@@ -71,7 +72,7 @@ const Footer = () => {
                 <div className="flex items-center space-x-1">
                   <MapPin className="flex-shrink-0 size-5" />
                   <span className="text-sm text-foreground/80">
-                    Bussines Village , Tower -B- floor 6 - Deira Duabi UAE
+                    Business Village , Tower -B- floor 6 - Deira Dubai UAE
                   </span>
                 </div>
                 <div className="flex items-center space-x-1">
