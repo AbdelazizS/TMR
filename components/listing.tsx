@@ -72,19 +72,30 @@ export default function PropertiesListing() {
           </div>
         ) : (
           <>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 md:mb-8 lg:mb-10">
-              Our
-              <span className="mx-1 text-transparent bg-clip-text bg-gradient-to-r from-primary/70 to-primary">
-                Featured
-              </span>
-              Properties{" "}
-            </h2>
+            <div className="text-center  mb-6 md:mb-8 lg:mb-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                Our
+                <span className="mx-1 text-transparent bg-clip-text bg-gradient-to-r from-primary/70 to-primary">
+                  Featured
+                </span>
+                Properties{" "}
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                At TRM, we’re dedicated to transforming the real estate
+                experience.
+              </p>
+            </div>
+
+        
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-8">
               {properties?.slice(0, 6).map((property) => (
                 <div key={property.id || property.slug} className="">
                   <PropertyCard property={property} />
                 </div>
               ))}
+
+              
             </div>
           </>
         )}

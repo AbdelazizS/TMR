@@ -17,38 +17,38 @@ import { Skeleton } from "../ui/skeleton";
 export default function PropertyFilters() {
   const [isMounted, setIsMounted] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const [city, setCity] = useState<string | undefined>(undefined);
   const [propertyType, setPropertyType] = useState<string | undefined>(
     undefined
   );
+  const [bathrooms, setBathrooms] = useState<number | undefined>(undefined);
   const [bedrooms, setBedrooms] = useState<number | undefined>(undefined);
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const cities = [
-    { value: "dubai", label: "Dubai" },
-    { value: "abu-dhabi", label: "Abu Dhabi" },
-    { value: "sharjah", label: "Sharjah" },
-  ];
-
   const propertyTypes = [
     { value: "apartment", label: "Apartment" },
     { value: "villa", label: "Villa" },
-    { value: "townhouse", label: "Townhouse" },
-    { value: "penthouse", label: "Penthouse" },
+    { value: "commercial", label: "Commercial" },
+    { value: "office", label: "Office" },
+    { value: "land", label: "Land" },
   ];
 
   const bedroomOptions = Array.from({ length: 10 }, (_, i) => i + 1);
+  const bathroomsOptions = Array.from({ length: 6 }, (_, i) => i + 1);
 
   useEffect(() => {
     setIsMounted(true);
     if (searchParams) {
       setSearchTerm(searchParams.get("search") || "");
-      setCity(searchParams.get("city") || undefined);
       setPropertyType(searchParams.get("type") || undefined);
       setBedrooms(
         searchParams.get("bedrooms")
           ? parseInt(searchParams.get("bedrooms")!)
+          : undefined
+      );
+      setBedrooms(
+        searchParams.get("bathrooms")
+          ? parseInt(searchParams.get("bathrooms")!)
           : undefined
       );
     }
@@ -57,9 +57,9 @@ export default function PropertyFilters() {
   const applyFilters = () => {
     const params = new URLSearchParams();
     if (searchTerm) params.set("search", searchTerm);
-    if (city) params.set("city", city);
     if (propertyType) params.set("type", propertyType);
     if (bedrooms) params.set("bedrooms", bedrooms.toString());
+    if (bedrooms) params.set("bathrooms", bedrooms.toString());
 
     // console.log("Applied Filters:", {
     //   searchTerm,
@@ -71,13 +71,15 @@ export default function PropertyFilters() {
     router.push(`?${params.toString()}`, { scroll: false });
   };
 
-  const hasFilters = Boolean(searchTerm || city || propertyType || bedrooms !== undefined);
+  const hasFilters = Boolean(
+    searchTerm || bathrooms || propertyType || bedrooms !== undefined
+  );
 
   const handleReset = () => {
     setSearchTerm("");
-    setCity(undefined);
     setPropertyType(undefined);
     setBedrooms(undefined);
+    setBathrooms(undefined);
 
     // console.log("Filters Reset - Showing all properties");
     router.push("?", { scroll: false });
@@ -105,23 +107,6 @@ export default function PropertyFilters() {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
-            </div>
-
-            {/* City Select */}
-            <div>
-              <Select value={city ?? ""} onValueChange={setCity}>
-                <SelectTrigger className="w-full">
-                  <SelectValue placeholder="All Cities" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">All Cities</SelectItem>
-                  {cities.map(({ value, label }) => (
-                    <SelectItem key={value} value={value}>
-                      {label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
             </div>
 
             {/* Property Type */}
@@ -165,6 +150,27 @@ export default function PropertyFilters() {
                 </SelectContent>
               </Select>
             </div>
+            {/* Bathrooms*/}
+            <div>
+              <Select
+                value={bathrooms?.toString() ?? ""}
+                onValueChange={(value) =>
+                  setBathrooms(value ? parseInt(value) : undefined)
+                }
+              >
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Bathrooms" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="any">Any</SelectItem>
+                  {bathroomsOptions.map((num) => (
+                    <SelectItem key={num} value={num.toString()}>
+                      {num === 6 ? "6+" : num.toString()}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
           </div>
         </div>
 
@@ -179,11 +185,7 @@ export default function PropertyFilters() {
             <X className="w-4 h-4 mr-1" />
             Reset All
           </Button>
-          <Button
-            size="sm"
-            disabled={!hasFilters}
-            onClick={applyFilters}
-          >
+          <Button size="sm" disabled={!hasFilters} onClick={applyFilters}>
             Apply Filters
           </Button>
         </div>

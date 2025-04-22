@@ -1,15 +1,17 @@
 // app/properties/page.tsx
-import { Suspense } from 'react'
-import PropertiesPage from '@/components/PropertiesPage'
+import { Suspense } from "react";
+import PropertiesPage from "@/components/PropertiesPage";
 
 interface Props {
   searchParams: {
-    status?: string
-    type?: string
-    location?: string
-    featured?: string
-    search?: string // ✅ Include 'search' if it’s supported
-  }
+    status?: string;
+    type?: string;
+    location?: string;
+    featured?: string;
+    bathrooms?: string | number;
+    bedrooms?: string | number;
+    search?: string; // ✅ Include 'search' if it’s supported
+  };
 }
 
 export default function Properties({ searchParams }: Props) {
@@ -17,5 +19,5 @@ export default function Properties({ searchParams }: Props) {
     <Suspense fallback={<div className="p-8" />}>
       <PropertiesPage filters={searchParams} />
     </Suspense>
-  )
+  );
 }

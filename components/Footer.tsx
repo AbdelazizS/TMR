@@ -56,8 +56,8 @@ const Footer = () => {
             <nav className="grid grid-cols-1 gap-3">
               <FooterLink href="/properties?type=office">Office Spaces</FooterLink>
               <FooterLink href="/properties?type=apartment">Luxury Apartments</FooterLink>
-              <FooterLink href="/properties">Commercial Properties</FooterLink>
-              <FooterLink href="/properties">New Developments</FooterLink>
+              <FooterLink href="/properties?type=commercial">Commercial Properties</FooterLink>
+              {/* <FooterLink href="/properties">New Developments</FooterLink> */}
             </nav>
           </div>
 

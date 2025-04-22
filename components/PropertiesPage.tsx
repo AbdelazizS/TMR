@@ -14,6 +14,9 @@ interface Filters {
   location?: string;
   search?: string;
   featured?: string;
+  bathrooms?: string;
+  bedrooms?: string;
+  value?: string;
 }
 
 export default function PropertiesClient({ filters }: { filters: Filters }) {
@@ -30,16 +33,22 @@ export default function PropertiesClient({ filters }: { filters: Filters }) {
       if (filters.location) filterParams.append("location", filters.location);
       if (filters.search) filterParams.append("search", filters.search);
       if (filters.featured) filterParams.append("featured", filters.featured);
+      if (filters.bedrooms) filterParams.append("bedrooms", filters.bedrooms);
+      if (filters.bathrooms)
+        filterParams.append("bathrooms", filters.bathrooms);
 
-      const parsedValue = JSON.parse(filters.value);
+      const parsedValue = filters.value ? JSON.parse(filters.value) : {};
 
       // Step 2: Extract the 'type' field
       // if (filters.type) cfilterParams.append('status', filters.status);
 
-
       try {
         const response = await api.get("/properties", {
-          params: { status: parsedValue.status, search: parsedValue.search , type: parsedValue.type }, // Send the filters as URLSearchParams
+          params: {
+            status: parsedValue.status,
+            search: parsedValue.search,
+            type: parsedValue.type,
+          }, // Send the filters as URLSearchParams
         });
         setProperties(response?.data?.data);
       } catch (error) {

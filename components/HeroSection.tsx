@@ -1,8 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
   Select,
@@ -12,13 +11,44 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
-import { Loader2 } from "lucide-react";
+import { Loader2, Play, Pause } from "lucide-react";
 
 const Hero = () => {
   const router = useRouter();
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
   const [type, setType] = useState<string | undefined>(undefined);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
+
+  // Handle video play/pause
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  // Ensure video loops properly
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.addEventListener('ended', () => {
+        video.currentTime = 0;
+        video.play();
+      });
+    }
+    return () => {
+      if (video) {
+        video.removeEventListener('ended', () => {});
+      }
+    };
+  }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -37,17 +67,54 @@ const Hero = () => {
       role="banner"
       aria-label="Real estate hero section"
     >
-      <Image
-        src="/hero.jpg"
-        alt="Modern real estate property background"
-        layout="fill"
-        objectFit="cover"
-        priority
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-black/60 to-black/20" />
+      {/* Background Video */}
+      <video
+        ref={videoRef}
+        autoPlay
+        loop
+        muted={isMuted}
+        playsInline
+        className="absolute z-0 w-full h-full object-cover"
+      >
+        {/* Provide multiple sources for cross-browser compatibility */}
+        <source src="/hero-video.mp4" type="video/mp4" />
+        <source src="/hero-video.webm" type="video/webm" />
+        Your browser does not support the video tag.
+      </video>
+      
+      {/* Fallback image if video fails to load */}
+      {/* <div className="absolute inset-0 bg-black">
+        <img 
+          src="/hero.jpg" 
+          alt="Modern real estate property background"
+          className="absolute w-full h-full object-cover opacity-50"
+        />
+      </div> */}
 
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/30" />
+
+      {/* Video controls (discreet) */}
+      <div className="absolute bottom-4 right-4 z-10 flex gap-2">
+        <button
+          onClick={togglePlay}
+          className="p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-all"
+          aria-label={isPlaying ? "Pause background video" : "Play background video"}
+        >
+          {isPlaying ? <Pause size={16} /> : <Play size={16} />}
+        </button>
+        <button
+          onClick={() => setIsMuted(!isMuted)}
+          className="p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-all"
+          aria-label={isMuted ? "Unmute background video" : "Mute background video"}
+        >
+          {isMuted ? "🔇" : "🔊"}
+        </button>
+      </div>
+
+      {/* Content */}
       <div className="relative container mx-auto px-4 py-12 h-full flex flex-col items-center justify-center text-center">
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+      <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
           Your
           <span className="mx-1 text-transparent bg-clip-text bg-gradient-to-tr from-blue-600 to-blue-700">
             Trusted
@@ -55,13 +122,14 @@ const Hero = () => {
           Real Estate Partner.
         </h1>
 
-        <p className="text-lg md:text-xl text-white mb-8">
-          We help you buy, sell, or rent properties with transparency and ease.
+        <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl">
+          Discover premium properties with immersive 360° tours and expert guidance
+          every step of the way.
         </p>
 
         <form
           onSubmit={handleSubmit}
-          className="w-full max-w-xl bg-card bg-opacity-90 rounded-lg shadow-md p-6"
+          className="w-full max-w-2xl bg-card bg-opacity-90 rounded-lg shadow-xl p-6 backdrop-blur-sm"
           role="search"
           aria-label="Property search filter"
         >
@@ -70,27 +138,44 @@ const Hero = () => {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               type="text"
-              placeholder="Enter city or location ..."
+              placeholder="Search by city or location ..."
               aria-label="Search by location or keyword"
+              className="w-full"
             />
 
-            <Select onValueChange={(val) => setType(val)} defaultValue="all">
-              <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Type" />
+            <Select  onValueChange={(val) => setType(val)} defaultValue="all">
+              <SelectTrigger className="w-[180px] "aria-label="Property type filter" >
+                <SelectValue placeholder="Property Type" />
               </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">All</SelectItem>
+              <SelectContent  >
+                <SelectItem value="all">All Properties</SelectItem>
                 <SelectItem value="for_rent">For Rent</SelectItem>
-                <SelectItem value="for_sell">For Sell</SelectItem>
+                <SelectItem value="for_sell">For Sale</SelectItem>
               </SelectContent>
             </Select>
 
-            <Button disabled={loading} type="submit" className="py-3 px-6">
-              {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-              Search
+            <Button 
+              disabled={loading} 
+              type="submit" 
+            >
+              {loading ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Searching...
+                </>
+              ) : (
+                "Find Properties"
+              )}
             </Button>
           </div>
         </form>
+
+        {/* Trust indicators */}
+        <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-8 text-white/80 text-sm">
+          <span>✓ 10,000+ Happy Clients</span>
+          <span>✓ 500+ Premium Listings</span>
+          <span>✓ 24/7 Customer Support</span>
+        </div>
       </div>
     </section>
   );

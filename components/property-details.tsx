@@ -27,6 +27,7 @@ import { NeighborhoodSection } from "./neighborhood-section";
 import { ContactFab } from "./contact-fab";
 
 export function PropertyDetails({ property }: { property: any }) {
+  console.log(property);
 
   return (
     <div className="relative">
@@ -46,11 +47,10 @@ export function PropertyDetails({ property }: { property: any }) {
             <span className="text-2xl font-bold text-primary">
               {property.price}
             </span>
-            {property.priceSuffix && (
-              <span className="text-muted-foreground ml-2">
+            <span className="text-muted-foreground ms-0.5 font-bold">AED</span>
+            {/* {property.priceSuffix && (
                 {property.priceSuffix}
-              </span>
-            )}
+            )} */}
           </div>
           {/* <span className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm">
             {property.status}
@@ -128,6 +128,9 @@ export function PropertyDetails({ property }: { property: any }) {
               </video>
             </section>
           )}
+
+          {/* Neighborhood */}
+          {property.features?.length > 0 && <FeaturesList features={property.features} />}
 
           {/* Neighborhood */}
           <NeighborhoodSection

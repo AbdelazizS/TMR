@@ -1,15 +1,13 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { MenuIcon, PhoneCallIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import {
   Sheet,
@@ -20,8 +18,20 @@ import {
 } from "@/components/ui/sheet";
 import ThemeToggle from "./ThemeToggle";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 const Navbar5 = () => {
+  const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const features = [
     {
       title: "About",
@@ -38,25 +48,40 @@ const Navbar5 = () => {
   ];
 
   return (
-    <header className="border-b border  left-0 top-0 w-full bg-background  z-[100]">
-      <div className="relative max-w-7xl mx-auto flex overflow-hidden p-4 flex-row items-center justify-between">
-        <Link href="/" className="">
+    <header
+      className={cn(
+        "sticky top-0 z-50 w-full transition-all duration-300 border-b",
+        scrolled
+          ? "bg-background/95 backdrop-blur-md border-b-primary/20 shadow-sm"
+          : "bg-background "
+      )}
+    >
+      <div className="max-w-7xl flex items-center justify-between h-20 px-2 mx-auto">
+        <Link href="/" className="flex items-center">
           <Image
             src="/tmr.png"
             alt="Elite Properties"
-            width={100}
-            height={10}
-            className="w-auto h-20 object-cover"
+            width={120}
+            height={40}
+            className="w-auto h-16 object-contain"
           />
         </Link>
 
-        <NavigationMenu className="hidden lg:block">
-          <NavigationMenuList className="flex w-full items-center gap-4">
-            {features.map((feature, index) => (
+        {/* Desktop Navigation */}
+        <NavigationMenu className="hidden lg:flex">
+          <NavigationMenuList className="gap-1">
+            {features.map((feature) => (
               <NavigationMenuItem key={feature.title}>
                 <Link
-                  className="rounded-md p-3 mt-2 transition-colors hover:bg-muted/70"
                   href={feature.href}
+                  className={cn(
+                    "px-4 py-2 text-sm font-medium transition-colors hover:text-primary relative",
+                    "after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2",
+                    "after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300",
+                    pathname === feature.href
+                      ? "text-primary after:w-4/5"
+                      : "text-foreground/80 hover:after:w-4/5"
+                  )}
                 >
                   {feature.title}
                 </Link>
@@ -65,76 +90,67 @@ const Navbar5 = () => {
           </NavigationMenuList>
         </NavigationMenu>
 
-        <div className="hidden lg:flex z-50  items-center gap-4">
-          {/* <Button
-            className="p-4 cursor-pointer hover:scale-101 "
-            variant={"outline"}
-          >
-            Learn More
-          </Button> */}
+        {/* Desktop Actions */}
+        <div className="items-center hidden gap-2 lg:flex">
+          <ThemeToggle />
           <a href="tel:+971564418632">
-            <Button className="p-4 cursor-pointer hover:scale-101 ">
-              Contact Us <PhoneCallIcon />
+            <Button className="gap-1.5" size="sm">
+              <PhoneCallIcon className="w-4 h-4" />
+              Contact
             </Button>
           </a>
-
-          <ThemeToggle />
         </div>
 
+        {/* Mobile Navigation */}
         <Sheet>
-          <SheetTrigger asChild className="lg:hidden z-50 cursor-pointer">
-            <Button variant="outline" size="icon">
-              <MenuIcon className="h-4 w-4 " />
+          <SheetTrigger asChild className="lg:hidden">
+            <Button variant="ghost" size="icon">
+              <MenuIcon className="w-5 h-5" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="left" className="max-h-screen overflow-auto p-2">
+          <SheetContent side="left" className="w-[300px] sm:w-[350px] p-2">
             <SheetHeader>
-              <SheetTitle>
-                <Link href="/" className="">
+              <SheetTitle className="text-left">
+                <Link href="/">
                   <Image
                     src="/tmr.png"
                     alt="Elite Properties"
-                    width={100}
-                    height={10}
-                    className="w-auto h-20 object-cover"
+                    width={120}
+                    height={40}
+                    className="w-auto h-12 object-contain"
                   />
                 </Link>
               </SheetTitle>
             </SheetHeader>
 
-            <NavigationMenu className=" items-start">
-              <NavigationMenuList className="flex-col items-start justify-items-start">
-                {features.map((feature, index) => (
-                  <NavigationMenuItem  className="w-full" key={feature.title}>
-                    <NavigationMenuLink
-                      href={feature.href}
-                      className="rounded-md p-3 transition-colors hover:bg-muted/70"
-                    >
-                      {feature.title}
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
-                ))}
-              </NavigationMenuList>
-            </NavigationMenu>
+            <div className="flex flex-col mt-8 space-y-2">
+              {features.map((feature) => (
+                <Link
+                  key={feature.title}
+                  href={feature.href}
+                  className={cn(
+                    "px-4 py-3 text-sm font-medium transition-colors rounded-lg",
+                    pathname === feature.href
+                      ? "bg-primary/10 text-primary"
+                      : "hover:bg-accent"
+                  )}
+                >
+                  {feature.title}
+                </Link>
+              ))}
+            </div>
 
-            <div className="flex items-center gap-4">
-
+            <div className="absolute bottom-6 left-4 right-4 space-y-3 flex gap-2">
               <a href="tel:+971564418632" className="w-full">
-                <Button className="p-4 cursor-pointer hover:scale-101 w-full">
-                  Contact Us <PhoneCallIcon />
+                <Button className="w-full gap-1.5">
+                  <PhoneCallIcon className="w-4 h-4" />
+                  Contact Us
                 </Button>
               </a>
-
-              <ThemeToggle />
+              <div className="flex justify-center">
+                <ThemeToggle />
+              </div>
             </div>
-              <Link href="/about_us" className="">
-                <Button
-                  className="p-4 cursor-pointer hover:scale-101 w-full "
-                  variant={"outline"}
-                >
-                  Learn More
-                </Button>
-              </Link>
           </SheetContent>
         </Sheet>
       </div>
