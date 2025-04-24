@@ -185,7 +185,7 @@ const Hero = () => {
         </div>
 
         {/* Trust indicators */}
-        <div className="absolute bottom-8 left-0 right-0 flex flex-wrap justify-center gap-6 px-4 text-sm text-white/90">
+        <div className="hidden lg:absolute bottom-8 left-0 right-0 lg:flex flex-wrap justify-center gap-6 px-4 text-sm text-white/90">
           {[
             { text: "10,000+ Happy Clients" },
             { text: "500+ Premium Listings" },
