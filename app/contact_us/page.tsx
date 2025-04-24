@@ -179,7 +179,7 @@ export default function ContactPage() {
               </div>
               <a
                 href="https://wa.me/+971559550372"
-                className="w-full ti leading-8 underline block text-xl font-semibold "
+                className="w-full ti leading-8 underline block text-lg  lg:text-xl font-semibold "
               >
                 Contact Us on Whatsapp
                 {/* <Button
