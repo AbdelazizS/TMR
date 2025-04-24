@@ -158,7 +158,7 @@ export function PropertyDetails({ property }: { property: any }) {
                 </Button>
               </a>
 
-              <a href="https://wa.me/+971559550372" className="block w-full ">
+              <a href="https://wa.me/+971559669372" className="block w-full ">
                 <Button
                   variant="outline"
                   className="p-4 cursor-pointer  w-full"

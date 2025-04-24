@@ -178,7 +178,7 @@ export default function ContactPage() {
                 </svg>
               </div>
               <a
-                href="https://wa.me/+971559550372"
+                href="https://wa.me/+971559669372"
                 className="w-full ti leading-8 underline block text-lg  lg:text-xl font-semibold "
               >
                 Contact Us on Whatsapp
