@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { Loader2, Play, Pause, CheckCircle } from "lucide-react";
+import Image from "next/image";
 
 const Hero = () => {
   const router = useRouter();
@@ -82,20 +83,9 @@ const Hero = () => {
         Your browser does not support the video tag.
       </video>
 
-      
-
-      {/* Fallback image if video fails to load */}
-      {/* <div className="absolute inset-0 bg-black">
-        <img 
-          src="/hero.jpg" 
-          alt="Modern real estate property background"
-          className="absolute w-full h-full object-cover opacity-50"
-        />
-      </div> */}
-
       {/* Gradient overlay */}
       {/* <div className="absolute inset-0 bg-black/60 " /> */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/20" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/20" />
 
       {/* Video controls (discreet) */}
       <div className="absolute bottom-4 right-4 z-10 flex gap-2">
@@ -152,7 +142,7 @@ const Hero = () => {
 
             <Select onValueChange={(val) => setType(val)} defaultValue="all">
               <SelectTrigger
-                className="w-[180px] "
+                className="w-full"
                 aria-label="Property type filter"
               >
                 <SelectValue placeholder="Property Type" />
@@ -176,6 +166,23 @@ const Hero = () => {
             </Button>
           </div>
         </form>
+
+        <div className=" flex items-center gap-4 mt-4">
+          <Image
+            src="/uae.png"
+            alt="Elite Properties"
+            width={120}
+            height={40}
+            className="w-48 h-auto object-contain"
+          />
+          <Image
+            src="/spain.png"
+            alt="Elite Properties"
+            width={120}
+            height={40}
+            className="w-48 h-auto object-contain"
+          />
+        </div>
 
         {/* Trust indicators */}
         <div className="absolute bottom-8 left-0 right-0 flex flex-wrap justify-center gap-6 px-4 text-sm text-white/90">

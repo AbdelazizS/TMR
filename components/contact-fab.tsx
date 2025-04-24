@@ -21,7 +21,7 @@ export function ContactFab({ property }: { property: any }) {
             </button>
           </div>
 
-          <a href="tel:+971564418632" className="w-full">
+          <a href="tel:+971564418632" className="w-full block">
             <Button className="p-4 cursor-pointer hover:scale-101 w-full">
               <Phone className="w-4 h-4" />
               Call Agent
@@ -30,7 +30,7 @@ export function ContactFab({ property }: { property: any }) {
 
           <a
            href="https://wa.me/+971559550372"
-            className="w-full"
+            className="w-full block"
           >
             <Button className="p-4 cursor-pointer hover:scale-101 w-full">
               Contact Us <MessageSquare className="w-4 h-4" />
@@ -39,11 +39,11 @@ export function ContactFab({ property }: { property: any }) {
 
           <a
             href="mailto:info@trm-realestatecom.org"
-            className="text-sm text-muted-foreground hover:text-foreground"
+            className="text-sm text-muted-foreground hover:text-foreground block"
           >
             <Button variant="outline" className="w-full gap-2">
               <Mail className="flex-shrink-0 size-5" />
-              Email TRM
+              Email TMR
             </Button>
           </a>
         </div>

@@ -126,7 +126,7 @@ export default function ContactPage() {
             <div className="flex items-center gap-2 mt-6">
               <div className="flex items-center justify-center p-1 rounded-lg bg-primary/5">
                 <svg
-                className="w-11 h-11"
+                  className="w-11 h-11"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 175.216 175.552"
                 >
@@ -177,7 +177,10 @@ export default function ContactPage() {
                   />
                 </svg>
               </div>
-              <a href="https://wa.me/+971559550372" className="w-full ti leading-8 underline block text-xl font-semibold ">
+              <a
+                href="https://wa.me/+971559550372"
+                className="w-full ti leading-8 underline block text-xl font-semibold "
+              >
                 Contact Us on Whatsapp
                 {/* <Button
                   variant="outline"
@@ -207,7 +210,7 @@ export default function ContactPage() {
               </address>
               <div className="pt-4">
                 <p className="text-sm font-medium text-foreground">
-                  Open Daily: 8 AM - 10 PM
+                  Open Daily : 8 AM - 4 PM
                 </p>
               </div>
             </div>
