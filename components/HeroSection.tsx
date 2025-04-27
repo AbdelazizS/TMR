@@ -167,7 +167,7 @@ const Hero = () => {
           </div>
         </form>
 
-        <div className=" flex items-center gap-4 mt-4">
+        {/* <div className=" flex items-center gap-4 mt-4">
           <Image
             src="/uae.png"
             alt="Elite Properties"
@@ -182,7 +182,7 @@ const Hero = () => {
             height={40}
             className="w-48 h-auto object-contain"
           />
-        </div>
+        </div> */}
 
         {/* Trust indicators */}
         <div className="hidden lg:absolute bottom-8 left-0 right-0 lg:flex flex-wrap justify-center gap-6 px-4 text-sm text-white/90">
