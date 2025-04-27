@@ -81,16 +81,16 @@ const Footer = () => {
                     href="tel:+971564418632"
                     className="text-sm text-muted-foreground hover:text-foreground"
                   >
-                    971 564 418 632
+                    + 971 564 418 632
                   </a>
                 </div>
                 <div className="flex items-center space-x-1">
                   <Mail className="flex-shrink-0 size-5" />
                   <a
-                    href="mailto:info@tmr-realestatecom.org"
+                    href="mailto:info@tmrrealestate.org"
                     className="text-sm text-muted-foreground hover:text-foreground"
                   >
-                    info@tmr-realestatecom.org
+                    info@tmrrealestate.org
                   </a>
                 </div>
               </div>

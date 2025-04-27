@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: "Contact TMR Real Estate Dubai",
     description:
       "Need help with real estate in Dubai? Contact TMR Real Estate for personalized assistance with buying, selling, or renting properties.",
-    url: "https://yourdomain.com/contact_us",
+    url: "https://tmrrealestate.org/contact_us",
     siteName: "TMR Real Estate",
     images: [
       {
@@ -178,7 +178,7 @@ export default function ContactPage() {
                 </svg>
               </div>
               <a
-                href="https://wa.me/+971559669372"
+                href="https://wa.me/+971559660372"
                 className="w-full ti leading-8 underline block text-lg  lg:text-xl font-semibold "
               >
                 Contact Us on Whatsapp

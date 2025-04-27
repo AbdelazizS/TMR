@@ -9,6 +9,7 @@ import AboutFeatures from "@/components/Features";
 import Footer from "@/components/Footer";
 import AboutFaqs from "@/components/Faq";
 import Testimonials from "@/components/feedbacks";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: 'About Us | TMR Real Estate Dubai',
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     title: 'About TMR Real Estate Dubai',
     description:
       'Discover TMR Real Estate’s story, mission, and team. We are a Dubai-based real estate agency committed to guiding clients through successful property journeys.',
-    url: 'https://yourdomain.com/about',
+    url: 'https://tmrrealestate.org/about_us',
     siteName: 'TMR Real Estate',
     images: [
       {

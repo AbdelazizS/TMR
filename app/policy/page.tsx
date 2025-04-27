@@ -6,7 +6,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import { Fragment } from "react";
 
-export default function ContactPage() {
+export default function PolicyPage() {
   return (
     <>
       <Navbar5 />

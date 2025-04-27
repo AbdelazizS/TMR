@@ -41,11 +41,11 @@ export default function Testimonials() {
                   excellence. Explore listings today.
                 </p>
                 <footer>
-                  <div className="text-lg font-semibold text-foreground/80 hover:text-foreground/70">
+                  {/* <div className="text-lg font-semibold text-foreground/80 hover:text-foreground/70">
                     Your FullName
-                  </div>
+                  </div> */}
                   <p className="text-sm font-medium text-foreground/50">
-                    Founder & CEO, [TMR Real Estates]
+                    CEO of [TMR Real Estates]
                   </p>
                 </footer>
                 

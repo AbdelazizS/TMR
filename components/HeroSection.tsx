@@ -154,8 +154,8 @@ const Hero = () => {
               </SelectContent>
             </Select>
 
-            <Button disabled={loading} type="submit">
-              {loading ? (
+            <Button disabled={loading} type="submit" className="cursor-pointer" >
+               {loading ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                   Searching...

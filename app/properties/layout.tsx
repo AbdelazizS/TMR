@@ -14,12 +14,12 @@ export const metadata: Metadata = {
     'TMR properties'
   ],
 
-  metadataBase: new URL('https://yourdomain.com'),
+  metadataBase: new URL('https://tmrrealestate.org'),
 
   openGraph: {
     title: 'Properties for Sale & Rent in Dubai | TMR Real Estate',
     description: 'Find your dream home or next big investment in Dubai. Browse TMR’s curated list of villas, apartments, and commercial properties.',
-    url: 'https://yourdomain.com/properties',
+    url: 'https://tmrrealestate.org/properties',
     siteName: 'TMR Real Estate Agency',
     images: [
       {

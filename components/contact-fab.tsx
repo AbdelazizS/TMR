@@ -29,7 +29,7 @@ export function ContactFab({ property }: { property: any }) {
           </a>
 
           <a
-           href="https://wa.me/+971559669372"
+           href="https://wa.me/+971559660372"
             className="w-full block"
           >
             <Button className="p-4 cursor-pointer hover:scale-101 w-full">
@@ -38,7 +38,7 @@ export function ContactFab({ property }: { property: any }) {
           </a>
 
           <a
-            href="mailto:info@trm-realestatecom.org"
+            href="mailto:info@tmrrealestate.org"
             className="text-sm text-muted-foreground hover:text-foreground block"
           >
             <Button variant="outline" className="w-full gap-2">

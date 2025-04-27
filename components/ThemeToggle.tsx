@@ -11,7 +11,6 @@ export default function ThemeToggle() {
 
   // Prevents hydration mismatch by ensuring the component is mounted
   useEffect(() => setMounted(true), []);
-
   if (!mounted) return null;
 
   return (

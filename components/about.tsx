@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { Eye } from "lucide-react";
 import Image from "next/image";
 
@@ -22,8 +22,8 @@ const AboutPage = () => {
               Who We Are
             </h1>
             <p className="text-muted-foreground mb-4">
-              At TRM, we don’t just sell properties—we build relationships and
-              shape futures. Founded in 2022 by Amir , our agency has grown into
+              At TMR, we don’t just sell properties—we build relationships and
+              shape futures. Founded by Mariam Lawal , our agency has grown into
               a trusted leader in dubai, helping over 90 families and investors
               find their perfect place. With a blend of cutting-edge technology
               and old-fashioned dedication, we’re redefining what it means to
@@ -36,7 +36,7 @@ const AboutPage = () => {
               partners with you at every step—from envisioning possibilities to
               turning keys
             </p>
-            <div className="grid sm:grid-cols-2 gap-6">
+            <div className="grid  gap-6">
               {/* Mission Card */}
               <div className="p-4 rounded-xl bg-card border shadow-xs ">
                 <span className="rounded-full bg-primary/10  w-max p-3 flex">
@@ -59,22 +59,37 @@ const AboutPage = () => {
                 <h2 className="font-semibold text-xl text-foreground mb-3 mt-2">
                   Our mission
                 </h2>
-                <p>Guiding you home with expertise and genuine care.</p>
-              </div>
-
-              {/* Vision Card */}
-              <div className="p-4 rounded-xl bg-card border shadow-xs ">
-                <span className="rounded-full bg-primary/10  w-max p-3 flex">
-                  <Eye className="" />
-                </span>
-                <h2 className="font-semibold text-xl text-foreground mb-3 mt-2">
-                  Our vision
-                </h2>
-                <p>Building communities where every door opens possibilities</p>
+                <p>
+                  delivering the dream of home ownership everywhere, all
+                  branches of TMR real estate company have this same goal,
+                  because owing a real estate company provide security, safety
+                  and opportunity for individuals. The technology we build helps
+                  real estate agents to become more efficient at thier job and
+                  find more customers to deliver on that mission. Our training
+                  prepares agents to become even better by utilizing exceptional
+                  techniques and systems, and the TMR teams constantly help
+                  families find and sell homes.
+                </p>
               </div>
             </div>
           </div>
+          <div className="p-4 rounded-xl bg-card border shadow-xs mx  max-w-3xl ">
+            <span className="rounded-full bg-primary/10  w-max p-3 flex">
+              <Eye className="" />
+            </span>
+            <h2 className="font-semibold text-xl text-foreground mb-3 mt-2">
+              Our vision
+            </h2>
+            <p>
+              Win, Make, and Do Good, we want to win at what we do l, and we do
+              all we can to help our customers, agents and employees build
+              wealth. We love to work with people who are passionate about
+              working hard and also giving back to their communities in a big
+              way.
+            </p>
+          </div>
         </div>
+          {/* Vision Card */}
       </div>
     </section>
   );

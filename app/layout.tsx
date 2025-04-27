@@ -26,16 +26,16 @@ export const metadata: Metadata = {
     'Luxury Properties Dubai'
   ],
 
-  authors: [{ name: 'TMR Real Estate Agency', url: 'https://yourdomain.com' }],
+  authors: [{ name: 'TMR Real Estate Agency', url: 'https://tmrrealestate.org' }],
   creator: 'TMR Real Estate',
   publisher: 'TMR Real Estate Agency',
 
-  metadataBase: new URL('https://yourdomain.com'),
+  metadataBase: new URL('https://tmrrealestate.org'),
 
   openGraph: {
     title: 'TMR Real Estate Agency | Properties in Dubai',
     description: 'Discover luxury villas, apartments, and commercial spaces in Dubai with TMR Real Estate.',
-    url: 'https://yourdomain.com',
+    url: 'https://tmrrealestate.org',
     siteName: 'TMR Real Estate Agency',
     images: [
       {
@@ -53,15 +53,15 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'TMR Real Estate Agency | Properties in Dubai',
     description: 'Find luxury villas, apartments, and commercial spaces in Dubai with TMR Real Estate.',
-    images: ['/images/tmr.png'],
+    images: ['/tmr.png'],
     site: '@TMRRealEstate', // optional
     creator: '@TMRRealEstate', // optional
   },
 
   icons: {
-    icon: '/images/tmr.png',
-    shortcut: '/images/tmr.png',
-    apple: '/images/tmr.png',
+    icon: '/tmr.png',
+    shortcut: '/tmr.png',
+    apple: '/tmr.png',
   },
 };
 
