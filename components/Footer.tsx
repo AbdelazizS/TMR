@@ -20,7 +20,7 @@ const Footer = () => {
             
             <Link href="/" className="block mb-6">
               <Image
-                src="/tmr.png"
+                src="/tmr_logo.png"
                 alt="Elite Properties"
                 width={160}
                 height={40}

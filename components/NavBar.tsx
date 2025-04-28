@@ -59,7 +59,7 @@ const Navbar5 = () => {
       <div className="max-w-7xl flex items-center justify-between h-20 px-2 mx-auto">
         <Link href="/" className="flex items-center">
           <Image
-            src="/tmr.png"
+            src="/tmr_logo.png"
             alt="Elite Properties"
             width={120}
             height={40}
@@ -113,7 +113,7 @@ const Navbar5 = () => {
               <SheetTitle className="text-left">
                 <Link href="/">
                   <Image
-                    src="/tmr.png"
+                    src="/tmr_logo.png"
                     alt="Elite Properties"
                     width={120}
                     height={40}

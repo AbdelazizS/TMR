@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     siteName: "TMR Real Estate Agency",
     images: [
       {
-        url: "/tmr.png",
+        url: "/tmr_logo.png",
         width: 800,
         height: 600,
         alt: "TMR Real Estate Logo",
@@ -62,15 +62,15 @@ export const metadata: Metadata = {
     title: "TMR Real Estate Agency | Properties in Dubai",
     description:
       "Find luxury villas, apartments, and commercial spaces in Dubai with TMR Real Estate.",
-    images: ["/tmr.png"],
+    images: ["/tmr_logo.png"],
     site: "@TMRRealEstate", // optional
     creator: "@TMRRealEstate", // optional
   },
 
   icons: {
-    icon: "/tmr.png",
-    shortcut: "/tmr.png",
-    apple: "/tmr.png",
+    icon: "/tmr_logo.png",
+    shortcut: "/tmr_logo.png",
+    apple: "/tmr_logo.png",
   },
 };
 
