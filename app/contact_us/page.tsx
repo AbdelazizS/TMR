@@ -210,7 +210,7 @@ export default function ContactPage() {
               </address>
               <div className="pt-4">
                 <p className="text-sm font-medium text-foreground">
-                  Open Daily : 8 AM - 4 PM
+                  Open Daily : 8:30 AM - 6:00 PM
                 </p>
               </div>
             </div>
