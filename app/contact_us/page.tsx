@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: "TMR Real Estate",
     images: [
       {
-        url: "/tmr.png",
+        url: "/tmr_logo.png",
         width: 1200,
         height: 630,
         alt: "TMR Real Estate Logo",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: "Contact TMR Real Estate Dubai",
     description:
       "Reach out to TMR Real Estate for any inquiries related to properties in Dubai. Our team is ready to assist you.",
-    images: ["/tmr.png"],
+    images: ["/tmr_logo.png"],
   },
 };
 

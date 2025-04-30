@@ -42,7 +42,7 @@ export default function Testimonials() {
                 </p>
                 <footer>
                   <div className="text-lg font-semibold text-foreground/80 hover:text-foreground/70">
-                    KEHINDE ARIYO AFOLALU
+                  Mariama Lawal
                   </div>
                   <p className="text-sm font-medium text-foreground/50">
                     CEO at [TMR Real Estates]
