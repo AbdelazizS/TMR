@@ -111,18 +111,18 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative container mx-auto px-4 py-12 h-full flex flex-col items-center justify-center text-center">
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+        {/* <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
           Your
           <span className="mx-1 text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 via-primary  to-blue-700">
             Trusted
           </span>
           Real Estate Partner.
-        </h1>
+        </h1> */}
 
-        <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl">
+        {/* <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl">
           Discover premium properties with immersive 360° tours and expert
           guidance every step of the way.
-        </p>
+        </p> */}
 
         <form
           onSubmit={handleSubmit}
