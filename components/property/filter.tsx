@@ -46,7 +46,7 @@ export default function PropertyFilters() {
           ? parseInt(searchParams.get("bedrooms")!)
           : undefined
       );
-      setBedrooms(
+      setBathrooms(
         searchParams.get("bathrooms")
           ? parseInt(searchParams.get("bathrooms")!)
           : undefined
