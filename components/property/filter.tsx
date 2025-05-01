@@ -59,7 +59,7 @@ export default function PropertyFilters() {
     if (searchTerm) params.set("search", searchTerm);
     if (propertyType) params.set("type", propertyType);
     if (bedrooms) params.set("bedrooms", bedrooms.toString());
-    if (bedrooms) params.set("bathrooms", bedrooms.toString());
+    if (bathrooms) params.set("bathrooms", bathrooms.toString());
 
     // console.log("Applied Filters:", {
     //   searchTerm,
