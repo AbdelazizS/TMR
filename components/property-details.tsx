@@ -154,11 +154,11 @@ export function PropertyDetails({ property }: { property: any }) {
                   className="p-4 cursor-pointer  w-full"
                 >
                   <Phone className="w-4 h-4" />
-                  Call Agent
+                  Call Us
                 </Button>
               </a>
 
-              <a href="https://wa.me/+971559660372" className="block w-full ">
+              <a href="https://wa.me/971559660372" className="block w-full ">
                 <Button
                   variant="outline"
                   className="p-4 cursor-pointer  w-full"

@@ -24,12 +24,12 @@ export function ContactFab({ property }: { property: any }) {
           <a href="tel:+971564418632" className="w-full block">
             <Button className="p-4 cursor-pointer hover:scale-101 w-full">
               <Phone className="w-4 h-4" />
-              Call Agent
+              Call Us
             </Button>
           </a>
 
           <a
-           href="https://wa.me/+971559660372"
+           href="https://wa.me/971559660372"
             className="w-full block"
           >
             <Button className="p-4 cursor-pointer hover:scale-101 w-full">

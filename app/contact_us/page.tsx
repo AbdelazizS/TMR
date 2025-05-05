@@ -178,7 +178,7 @@ export default function ContactPage() {
                 </svg>
               </div>
               <a
-                href="https://wa.me/+971559660372"
+                href="https://wa.me/971559660372"
                 className="w-full ti leading-8 underline block text-lg  lg:text-xl font-semibold "
               >
                 Contact Us on Whatsapp
@@ -228,10 +228,10 @@ export default function ContactPage() {
             </div>
             <div className="space-y-4">
               <a
-                href="mailto:info@tmr-realestatecom.org"
+                href="mailto:info@info@tmrrealestate.org"
                 className="block font-medium text-primary"
               >
-                info@tmr-realestatecom.org
+                info@info@tmrrealestate.org
               </a>
               <div className="flex gap-4 pt-2">
                 {/* <a
