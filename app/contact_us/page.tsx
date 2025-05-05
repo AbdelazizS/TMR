@@ -228,10 +228,10 @@ export default function ContactPage() {
             </div>
             <div className="space-y-4">
               <a
-                href="mailto:info@info@tmrrealestate.org"
+                href="mailto:info@tmrrealestate.org"
                 className="block font-medium text-primary"
               >
-                info@info@tmrrealestate.org
+                info@tmrrealestate.org
               </a>
               <div className="flex gap-4 pt-2">
                 {/* <a
