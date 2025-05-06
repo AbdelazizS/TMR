@@ -5,7 +5,7 @@ const nextConfig = {
   },
 
   images: {
-    domains: ["api.trms.digital"],
+    domains: ["api.tmrrealestate.org"],
   },
 };
 module.exports = nextConfig;
