@@ -20,7 +20,7 @@ export default function Testimonials() {
             <div className="max-auto relative w-2/3 p-6 md:w-1/4">
               <div className="absolute inset-0 m-6 -rotate-6 rounded-lg bg-white/10 shadow-lg"></div>
               <img
-                src="/ceo.jpg"
+                src="/images/ceo.jpg"
                 className="relative rounded-lg"
                 alt="User Photo"
               />
