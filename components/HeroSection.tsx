@@ -78,8 +78,8 @@ const Hero = () => {
         className="absolute z-0 w-full h-full object-cover"
       >
         {/* Provide multiple sources for cross-browser compatibility */}
-        <source src="/hero-video.mp4" type="video/mp4" />
-        <source src="/hero-video.webm" type="video/webm" />
+        <source src="/images/hero-video.mp4" type="video/mp4" />
+        <source src="/images/hero-video.webm" type="video/webm" />
         Your browser does not support the video tag.
       </video>
 
